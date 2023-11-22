@@ -129,10 +129,11 @@ void parseEffect(int data) {
 
 void setup() {
 #ifdef NEOPIXEL
+
+  Led.initStrip();
   #ifdef DEBUG
     Led.debugColors();
   #endif
-  Led.initStrip();
   // power the button
   digitalWrite(BUTTON_PWR, HIGH);
 #else
@@ -141,6 +142,9 @@ void setup() {
 #endif
 #ifdef NEOKEY
   Led.initPixels();
+  #ifdef DEBUG
+    Led.debugColors();
+  #endif
   button.begin(PIN_SWITCH,INPUT_PULLDOWN);
 #else
   button.begin(BUTTON_PIN);

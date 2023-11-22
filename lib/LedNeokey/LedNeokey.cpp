@@ -24,15 +24,14 @@ void LedNeokey::initPixels()
     pixels.neopixel.clear();
 }
 
-// void LedNeokey::debugColors() {
-//     LedColor colors[4] = {red, green, blue, no_color};
-//     for (size_t i = 0; i < 4; i++)
-//     {
-//         setColor(colors[i]);
-//         strip.Show();
-//         delay(400);
-//     }
-// }
+void LedNeokey::debugColors() {
+    LedColor colors[4] = {red, green, blue, no_color};
+    for (size_t i = 0; i < 4; i++)
+    {
+        setColor(colors[i]);
+        delay(400);
+    }
+}
 
 uint8_t LedNeokey::fade(uint32_t color, uint8_t fade_type, uint16_t time)
 {
