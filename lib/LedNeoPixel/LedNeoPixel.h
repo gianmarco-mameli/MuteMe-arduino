@@ -1,7 +1,9 @@
+#ifdef NEOPIXEL
 #ifndef LedNeoPixel_h
 #define LedNeoPixel_h
 #include "Arduino.h"
 #include <Led.h>
+
 #include <NeoPixelBus.h>
 #include <NeoPixelAnimator.h>
 
@@ -22,4 +24,5 @@ class LedNeoPixel {
         void setEffect(LedEffect effect);
         void setColor(LedColor color);
 };
+#endif
 #endif

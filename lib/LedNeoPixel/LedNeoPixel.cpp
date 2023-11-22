@@ -1,4 +1,5 @@
-# include <LedNeoPixel.h>
+#ifdef NEOPIXEL
+#include <LedNeoPixel.h>
 
 boolean fadeToColor = false;
 const uint16_t colorSaturation=128;
@@ -165,3 +166,4 @@ void LedNeoPixel::update() {
             break;
     }
 }
+#endif

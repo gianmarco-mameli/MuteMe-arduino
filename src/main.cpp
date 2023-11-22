@@ -13,6 +13,12 @@
 #include <LedNeoPixel.h>
 
 LedNeoPixel Led;
+#endif
+
+#ifdef NEOKEY
+
+#include <LedNeokey.h>
+LedNeokey Led;
 
 #else
 
@@ -133,8 +139,12 @@ void setup() {
   Led.setColor(LedColor::no_color);
   Led.setEffect(LedEffect::bright);
 #endif
-
+#ifdef NEOKEY
+  Led.initPixels();
+  button.begin(PIN_SWITCH,INPUT_PULLDOWN);
+#else
   button.begin(BUTTON_PIN);
+#endif
   button.setPressedHandler(pressed);
   button.setLongClickDetectedHandler(longClickDetected);
   button.setReleasedHandler(released);
